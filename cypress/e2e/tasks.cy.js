@@ -15,6 +15,24 @@ describe('Tarefas', () => {
             .should('be.visible')
         })
 
+
+       /* const tasks = [
+            'Jogar Playstation',
+            'Estudar programação',
+            'Bla bla bla'
+            ]
+
+        tasks.forEach(taskName => {
+        it(`Deve cadastrar a tarefa: ${taskName}`, () => {
+
+        cy.removeTaskByName(taskName)
+        cy.createTask(taskName)
+
+        cy.contains('main div p', taskName)
+                .should('be.visible')
+            })
+        })*/
+
         it('Não deve permitir tarefa duplicada', () => {
 
         const task = {
