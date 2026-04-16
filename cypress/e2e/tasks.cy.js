@@ -1,8 +1,9 @@
 /// <reference types="cypress" />
 
-describe('tarefas', () => {
+describe('Tarefas', () => {
 
-    it('Deve cadastrar uma nova tarefa', () => {
+    context('Cadastro', () => {
+        it('Deve cadastrar uma nova tarefa', () => {
 
         const taskName = 'Ler um livro de Node.js'
         
@@ -12,9 +13,9 @@ describe('tarefas', () => {
 
         cy.contains('main div p', taskName)
             .should('be.visible')
-    })
+        })
 
-    it('Não deve permitir tarefa duplicada', () => {
+        it('Não deve permitir tarefa duplicada', () => {
 
         const task = {
             name: 'Estudar Javascript',
@@ -34,10 +35,12 @@ describe('tarefas', () => {
         cy.get('.swal2-html-container')
             .should('be.visible')
             .should('have.text', 'Task already exists!')
-    })
+        })
 
-    it('Campo obrigatório', () =>{
+        it('Campo obrigatório', () =>{
         cy.createTask()
         cy.isRequired('This is a required field')
+       })
+
     })
 })
