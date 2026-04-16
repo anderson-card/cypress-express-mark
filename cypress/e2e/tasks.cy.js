@@ -5,7 +5,7 @@ describe('tarefas', () => {
     it('Deve cadastrar uma nova tarefa', () => {
 
         const taskName = 'Ler um livro de Node.js'
-
+        
         cy.removeTaskByName(taskName)
 
         cy.createTask(taskName)
@@ -34,5 +34,10 @@ describe('tarefas', () => {
         cy.get('.swal2-html-container')
             .should('be.visible')
             .should('have.text', 'Task already exists!')
+    })
+
+    it('Campo obrigatório', () =>{
+        cy.createTask()
+        cy.isRequired('This is a required field')
     })
 })
