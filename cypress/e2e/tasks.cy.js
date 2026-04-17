@@ -10,10 +10,6 @@ describe('Tarefas', () => {
         })
     })
 
-    beforeEach(() => {
-        cy.viewport(1920, 1080)
-    })
-
     context('Cadastro', () => {
         it('Deve cadastrar uma nova tarefa', () => {
 

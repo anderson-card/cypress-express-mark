@@ -5,3 +5,4 @@ describe('home', () => {
     cy.title() .should('eq', 'Gerencie suas tarefas com Mark L')
   })
 })
+
